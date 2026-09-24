@@ -3,10 +3,11 @@ package interfaz_y_clasebase_subclases;
 import java.util.List;
 
 public class PreguntaOpcionMultiple extends Pregunta {
-    private List<String> opciones;
+    private List<String> opciones; 
     private int indiceCorrecto;
 
-    public PreguntaOpcionMultiple(int id, String enunciado, int puntajeBase, int idCategoria, List<String> opciones, int indiceCorrecto) {
+    
+	public PreguntaOpcionMultiple(int id, String enunciado, int puntajeBase, int idCategoria, List<String> opciones, int indiceCorrecto) {
         super(id, enunciado, puntajeBase, idCategoria);
         this.opciones = opciones;
         this.indiceCorrecto = indiceCorrecto;
@@ -14,16 +15,16 @@ public class PreguntaOpcionMultiple extends Pregunta {
 
     @Override
     public boolean evaluarRespuesta(Object respuesta) {
-        if (!(respuesta instanceof Integer)) return false;
-        int eleccion = (Integer) respuesta;
-        return eleccion == indiceCorrecto;
+        if (respuesta instanceof Integer) {
+            return (Integer) respuesta == indiceCorrecto;
+        }
+        return false;
     }
 
     @Override
     public int calcularPuntajeFinal(int tiempoSegundos) {
-        return Math.max(10, puntajeBase - (tiempoSegundos * 2));
+        return (tiempoSegundos <= 10) ? puntajeBase + 20 : puntajeBase;
     }
 
     public List<String> getOpciones() { return opciones; }
-    public int getIndiceCorrecto() { return indiceCorrecto; }
 }

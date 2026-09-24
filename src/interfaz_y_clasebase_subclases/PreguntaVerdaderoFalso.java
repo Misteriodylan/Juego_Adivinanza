@@ -10,14 +10,14 @@ public class PreguntaVerdaderoFalso extends Pregunta {
 
     @Override
     public boolean evaluarRespuesta(Object respuesta) {
-        if (!(respuesta instanceof Boolean)) return false;
-        return ((Boolean) respuesta) == respuestaCorrecta;
+        if (respuesta instanceof Boolean) {
+            return (Boolean) respuesta == respuestaCorrecta;
+        }
+        return false;
     }
 
     @Override
     public int calcularPuntajeFinal(int tiempoSegundos) {
         return puntajeBase;
     }
-
-    public boolean isRespuestaCorrecta() { return respuestaCorrecta; }
 }
