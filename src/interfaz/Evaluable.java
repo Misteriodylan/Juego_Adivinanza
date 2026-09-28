@@ -1,4 +1,4 @@
-package interfaz_y_clasebase_subclases;
+package interfaz;
 
 public interface Evaluable {
     boolean evaluarRespuesta(Object respuesta);

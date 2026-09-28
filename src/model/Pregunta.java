@@ -1,5 +1,5 @@
-package interfaz_y_clasebase_subclases;
-
+package model;
+import interfaz.*;
 public abstract class Pregunta implements Evaluable {
     protected int id;
     protected String enunciado;

@@ -1,4 +1,4 @@
-package interfaz_y_clasebase_subclases;
+package model;
 import java.util.List;
 
 public class PreguntaConComodin extends Pregunta {
