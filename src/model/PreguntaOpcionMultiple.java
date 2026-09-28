@@ -1,4 +1,4 @@
-package interfaz_y_clasebase_subclases;
+package model;
 
 import java.util.List;
 
@@ -27,4 +27,6 @@ public class PreguntaOpcionMultiple extends Pregunta {
     }
 
     public List<String> getOpciones() { return opciones; }
+
+public int getIndiceCorrecto() { return indiceCorrecto; }
 }

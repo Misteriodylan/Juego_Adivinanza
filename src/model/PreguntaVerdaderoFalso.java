@@ -1,4 +1,4 @@
-package interfaz_y_clasebase_subclases;
+package model;
 
 public class PreguntaVerdaderoFalso extends Pregunta {
     private boolean respuestaCorrecta;
